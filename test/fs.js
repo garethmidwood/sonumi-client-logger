@@ -3,11 +3,10 @@ var expect = require('chai').expect,
     sinon  = require('sinon'),
     rewire = require('rewire'),
     filename = 'test.log',
-    path = '/tmp/logger-test/',
-    filepath = filename + path;
+    path = '/tmp/logger-test/';
 
 
-describe("Write logs", function() {
+describe("Write logs - file system", function() {
     var fsAdapter = rewire("../lib/adapters/fs");
 
     var fsMock, wsMock, sandbox;
@@ -37,7 +36,7 @@ describe("Write logs", function() {
         assert(fsMock.mkdirSync.calledOnce);
     });
 
-    it('should write an opening message to a new file', function () {
+    it('should write an opening message when created', function () {
         new fsAdapter(filename, path, fsMock);
 
         assert(wsMock.write.calledOnce);
