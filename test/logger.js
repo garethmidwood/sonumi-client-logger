@@ -8,21 +8,14 @@ var expect = require('chai').expect,
 describe("Write logs", function() {
     var sonumiLogger = rewire("../lib/logger");
 
-    var fsAdapterMock, logAdapterMock, sandbox;
+    var fsAdapterMock, logAdapterMock;
 
     beforeEach(function() {
-        sandbox = sinon.sandbox.create({}, {});
-
         logAdapterMock = sinon.stub();
         logAdapterMock.addLogFile = sinon.stub();
 
         fsAdapterMock = sinon.stub();
         fsAdapterMock.mkdir = sinon.stub();
-    });
-
-    afterEach(function() {
-        // restore the environment as it was before
-        sandbox.restore();
     });
 
 
