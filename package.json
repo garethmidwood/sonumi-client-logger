@@ -1,14 +1,14 @@
 {
-  "name": "sonumi-client-logger",
+  "name": "sonumi-logger",
   "version": "0.1.0",
-  "description": "sonumi master device logger",
+  "description": "sonumi logger",
   "main": "lib/logger",
   "scripts": {
     "test": "make test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/garethmidwood/sonumi-client-logger.git"
+    "url": "https://github.com/garethmidwood/sonumi-logger.git"
   },
   "keywords": [
     "sonumi",
@@ -17,11 +17,10 @@
   "author": "Gareth <“gmidwood@gmail.com”> (http://www.garethmidwood.co.uk/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/garethmidwood/sonumi-client-logger/issues"
+    "url": "https://github.com/garethmidwood/sonumi-logger/issues"
   },
-  "homepage": "https://github.com/garethmidwood/sonumi-client-logger",
+  "homepage": "https://github.com/garethmidwood/sonumi-logger",
   "devDependencies": {
-    "assert": "^1.3.0",
     "chai": "^3.4.1",
     "mocha": "^2.3.4",
     "rewire": "^2.5.0",
@@ -29,7 +28,6 @@
   },
   "dependencies": {
     "config": "^1.17.1",
-    "fs": "0.0.2",
     "mkdirp": "^0.5.1",
     "winston": "^2.1.1"
   }
