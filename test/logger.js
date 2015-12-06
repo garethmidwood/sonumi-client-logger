@@ -1,13 +1,10 @@
 var expect = require('chai').expect,
     assert = require('chai').assert,
     sinon  = require('sinon'),
-    rewire = require('rewire'),
-    logDir = '/tmp/logger-test/';
-
+    logDir = '/tmp/logger-test/',
+    sonumiLogger = require("../lib/logger");
 
 describe("Write logs", function() {
-    var sonumiLogger = rewire("../lib/logger");
-
     var fsAdapterMock, logAdapterMock;
 
     beforeEach(function() {
