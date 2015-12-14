@@ -17,10 +17,10 @@ describe("Write logs", function() {
 
 
     it('should create the log directory', function () {
-        new sonumiLogger(logDir, {
-            'fs': fsAdapterMock,
-            'logger': logAdapterMock
-        });
+        logger = sonumiLogger.create(
+            logDir,
+            { 'fs': fsAdapterMock, 'logger': logAdapterMock }
+        );
 
         assert(fsAdapterMock.mkdir.calledOnce);
     });
@@ -29,10 +29,12 @@ describe("Write logs", function() {
         fsAdapterMock.mkdir.throws(new Error);
 
         expect(function() {
-            (new sonumiLogger(logDir, {
-                'fs': fsAdapterMock,
-                'logger': logAdapterMock
-            }))
+            (
+                sonumiLogger.create(
+                    logDir,
+                    { 'fs': fsAdapterMock, 'logger': logAdapterMock }
+                )
+            )
         }).to.throw(Error);
     });
 
@@ -42,10 +44,12 @@ describe("Write logs", function() {
         fsAdapterMock.mkdir.throws(error);
 
         expect(function() {
-            (new sonumiLogger(logDir, {
-                'fs': fsAdapterMock,
-                'logger': logAdapterMock
-            }))
+            (
+                sonumiLogger.create(
+                    logDir,
+                    { 'fs': fsAdapterMock, 'logger': logAdapterMock }
+                )
+            )
         }).to.not.throw(Error);
     });
 
