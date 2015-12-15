@@ -15,9 +15,8 @@ describe("Write logs", function() {
         fsAdapterMock.mkdir = sinon.stub();
     });
 
-
     it('should create the log directory', function () {
-        logger = sonumiLogger.create(
+        logger = sonumiLogger.init(
             logDir,
             { 'fs': fsAdapterMock, 'logger': logAdapterMock }
         );
@@ -30,7 +29,7 @@ describe("Write logs", function() {
 
         expect(function() {
             (
-                sonumiLogger.create(
+                sonumiLogger.init(
                     logDir,
                     { 'fs': fsAdapterMock, 'logger': logAdapterMock }
                 )
@@ -45,12 +44,11 @@ describe("Write logs", function() {
 
         expect(function() {
             (
-                sonumiLogger.create(
+                sonumiLogger.init(
                     logDir,
                     { 'fs': fsAdapterMock, 'logger': logAdapterMock }
                 )
             )
         }).to.not.throw(Error);
     });
-
 });
